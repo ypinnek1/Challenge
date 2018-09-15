@@ -1,0 +1,120 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-weight: lighter;
+}
+
+a{
+    color: inherit;
+}
+
+button{
+    cursor: pointer;
+    outline:none;
+    font-weight: 300;
+    background-color: #1dce94;
+    border: none;
+    border-radius: 500px;
+    color: white;
+    padding:0.5rem 1rem;
+    transition: all 0.3s;
+
+    &:hover{
+        color: #1dce94;
+        background-color: white;
+    }
+
+    &:active{
+        background-color: #cbcbcb;
+    }
+}
+
+* { box-sizing: border-box; }
+
+.btn {
+    display: none;
+}
+
+.list--users {
+    list-style: none;
+}
+
+.register--user {
+    color: grey;
+}
+
+input[type=text] {
+    border: 2px solid rgb(173, 204, 204);
+    height: 31px;
+    width: 223px;
+    box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;
+    transition:1s all ease;
+    padding:3px 3px 3px 3px;
+}
+
+.submit--user__name{
+    margin-top: 15px;
+    width:150px;
+    height:45px;
+    border:none;
+    outline:none;
+    box-shadow:-4px 4px 5px 0 grey;
+    color:#fff;
+    font-size:14px;
+    text-shadow:0 1px rgba(0,0,0,0.4);
+    background-color:darkgreen;
+    border-radius:3px;
+    font-weight:700
+    }
+    .submit--user__name:hover{
+        background-color:green;
+        cursor:pointer
+    }
+    .submit--user__name:active{
+        margin-left:-4px;
+        margin-bottom:-4px;
+        padding-top:2px;
+        box-shadow:none
+    }
+
+/* The Modal (background) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
