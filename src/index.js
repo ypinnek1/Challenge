@@ -1,7 +1,6 @@
 require('normalize.css/normalize.css');
 require('./styles/index.scss');
 
-
 window.addEventListener("DOMContentLoaded", function() {
 
 
@@ -127,8 +126,10 @@ window.addEventListener("DOMContentLoaded", function() {
             var values = Object.values(users);
             var minVal = Math.min(...values);
             var keys = Object.keys(users);
+            // finalized lunch group
             var group = [];
             
+            // increment value for every time colleague joins user for lunch
             for(let key in users) {
                 if(users[key] === minVal && group.length < 5) {
                     group.push(key)
