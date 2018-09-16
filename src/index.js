@@ -3,7 +3,6 @@ require('./styles/index.scss');
 
 window.addEventListener("DOMContentLoaded", function() {
 
-
     var registerUser = (function () {
 
         // List of users in the company
@@ -23,14 +22,22 @@ window.addEventListener("DOMContentLoaded", function() {
         // Attaching event listener to the Submit button
         var submitBtn = document.querySelector('.submit--user__name');
         submitBtn.addEventListener('click', valSubmitted);
-    
+        
+        if(localStorage.getItem("userRegistered")) {
+            removeRegistrationOption();
+            displayUsers();
+            enableBtn();
+        }
+
         // Storing the name of the registered user. Updated the local storage with the users list. 
         // Removing registration option after submit is successful. Enabling 'Coffee' & 'Lunch' buttons.
         function valSubmitted() {
             myName = document.querySelector('.input--user__name').value;
-            updateLocalStorage();
-            removeRegistrationOption();
-            enableBtn();
+            if(myName) {
+                updateLocalStorage();
+                removeRegistrationOption();
+                enableBtn();
+            }
         }
 
         function enableBtn() {
@@ -45,13 +52,14 @@ window.addEventListener("DOMContentLoaded", function() {
 
         function updateLocalStorage () {
             localStorage.setItem('usersTable', JSON.stringify(users));
+            localStorage.setItem('userRegistered', true);
             displayUsers();
             addRegisteredUser();
         };
 
         function displayUsers () {
             // DOM manipulations to show the list of users
-            var heading = document.querySelector('h2');
+            var heading = document.createElement('h2');
             heading.textContent = 'Users in the Company';
             var div = document.createElement('div');
             div.classList.add('list');
@@ -190,5 +198,14 @@ window.addEventListener("DOMContentLoaded", function() {
 
     // Start Point
     registerUser.init();
+
+    // Uncomment the below line only if you want to register again and run once and then comment again. I am calling
+    // the function before it is declared and it still works because of how scoping works in JS>\.
+    
+    // resetLocalStorage();
+    function resetLocalStorage() {
+        localStorage.clear();
+    }
+
 
 });

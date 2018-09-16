@@ -17,3 +17,4 @@ Concepts:
     Used Modular pattern in vanilla JS without any helper modules (used IIFE's & Closures). 
     Created a custom Modal.
     Used Local Storage.
+    Please check comments at line 202 on clearing local storage to register user again.
